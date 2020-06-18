@@ -1,0 +1,53 @@
+<template>
+  <div style="text-align:left;">
+    <h2>Personal Info</h2>
+    <p>ID: {{ info.id }}</p>
+    
+    <p>USERNAME: {{info.username}}</p>
+      
+    
+  </div>
+</template>
+
+<script>
+import axios from 'axios'
+const SERVER_URL = 'http://127.0.0.1:8000'
+
+export default {
+  name : 'MyInfoView',
+
+  data() {
+    return {
+      info: {
+        id: '',
+        username: '',
+      }
+    }
+  },
+
+  methods: {
+    getmyInfo() {
+      const requestHeader = {
+        headers: {
+          Authorization: `Token ${this.$cookies.get('auth-token')}`
+        }
+      }
+      axios.get(`${SERVER_URL}/accounts/myinfo/`, requestHeader)
+        .then(res => {
+          this.info = res.data
+          this.$emit('gotPersonalInfo', this.info)
+        })
+        .catch(err => console.log(err))
+    }
+  },
+
+  created() {
+    this.getmyInfo()
+  },
+
+}
+</script>
+
+<style>
+
+</style>
