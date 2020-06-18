@@ -18,7 +18,7 @@ import MovieListItem from './MovieListItem.vue'
 import GenreListView from '@/components/GenreListView.vue'
 import RecommendView from '@/components/recommend/RecommendView.vue'
 
-const SERVER_URL = 'http://127.0.0.1:8000'
+const SERVER_URL = 'http://3.34.200.109'
 
 export default {
   name: "MovieList",

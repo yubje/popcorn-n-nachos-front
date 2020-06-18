@@ -18,7 +18,7 @@ import axios from 'axios'
 import Navbar from '@/components/Navbar.vue'
 
 
-const SERVER_URL = 'http://127.0.0.1:8000'
+const SERVER_URL = 'http://3.34.200.109'
 
 export default {
   name: "App",
@@ -105,9 +105,6 @@ export default {
 
 }
 
-/* #app:hover{
-  cursor: pointer;
-} */
 
 #nav a {
   font-weight: bold;

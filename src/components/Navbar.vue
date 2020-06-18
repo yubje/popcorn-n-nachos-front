@@ -40,8 +40,6 @@
 </template>
 
 <script>
-// import axios from 'axios'
-// const SERVER_URL = 'http://127.0.0.1:8000'
 
 export default {
   name: 'Navbar',
@@ -50,45 +48,12 @@ export default {
       type: Boolean,
     }
   },
-  // data() {
-  //   return {
-  //     isLoggedIn: false,
-  //     logo: require('@/assets/logo.png'),
-  //   }
-  // },
  
   methods: {
     logout() {
       this.$emit('submit-logout-data')
-      // 'auth-token'의 이름을 가진 key 가져오기
-      // const requestHeader = {
-      //   headers: {
-      //     Authorization: `Token ${this.$cookies.get('auth-token')}`
-      //   }
-      // }
-      // // url, body, header
-      // console.log('logout 실행')
-      // axios.post(`${SERVER_URL}/rest-auth/logout/`, null, requestHeader)
-      //   .then(() => {
-      //     // 캐시 삭제
-      //     this.$cookies.remove('auth-token')
-      //     // 상태 변경
-      //     this.isLoggedIn = false
-      //     // 목록으로 이동
-      //     console.log('logout 성공')
-      //     this.$router.push('/movies')
-      //   })
-      //   .catch(error => console.log(error.response.data))
     },
   },
-  // 로그인 여부 확인
-  // mounted() {
-  //   if (this.$cookies.isKey('auth-token')) {
-  //     this.isLoggedIn = true
-  //   } else {
-  //     this.isLoggedIn = false
-  //   }
-  // },
 }
 
 
@@ -100,9 +65,6 @@ export default {
   min-height: 80px;
 }
 
-/* .nav-item {
-  color : #313D4F;
-} */
 
 #nav a:hover{
   color : #313D4F;
@@ -119,11 +81,5 @@ export default {
   font-size: 30px;
   
 }
-/* .red {
-  color: red;
-}
 
-.white {
-  color: white;
-} */
 </style>

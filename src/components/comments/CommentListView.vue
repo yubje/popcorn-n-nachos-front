@@ -29,7 +29,7 @@ import axios from 'axios'
 import CommentListItemView from '@/components/comments/CommentListItemView.vue'
 import CommentCreateView from '@/components/comments/CommentCreateView.vue'
 
-const SERVER_URL = 'http://127.0.0.1:8000'
+const SERVER_URL = 'http://3.34.200.109'
 
 export default {
   name: 'CommentListView',

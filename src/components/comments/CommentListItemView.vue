@@ -30,7 +30,7 @@
 
 <script>
 import axios from 'axios'
-const SERVER_URL = 'http://127.0.0.1:8000'
+const SERVER_URL = 'http://3.34.200.109'
 
 export default {
   name: 'CommentListItemView',
@@ -51,7 +51,7 @@ export default {
         }
       }
       axios.delete(`${SERVER_URL}/articles/${this.article_id}/${this.comment.id}/update_delete/`,  requestHeader)
-      .then(response => {
+      .then(() => {
         this.$router.go()
       })
       .catch(error => console.log(error.response.data))

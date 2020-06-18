@@ -30,7 +30,7 @@ import axios from 'axios'
 import MyRatedMoviesView from '@/components/profile/MyRatedMoviesView.vue'
 import MyArticleListView from '@/components/profile/MyArticleListView.vue'
 
-const SERVER_URL = 'http://127.0.0.1:8000'
+const SERVER_URL = 'http://3.34.200.109'
 
 export default {
   name: 'MyRatedGenresView',

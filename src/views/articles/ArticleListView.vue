@@ -34,7 +34,7 @@
 import axios from 'axios'
 import ArticleListItemView from '@/views/articles/ArticleListItemView.vue'
 
-const SERVER_URL = 'http://127.0.0.1:8000'
+const SERVER_URL = 'http://3.34.200.109'
 
 export default {
   name: 'ArticleListView',

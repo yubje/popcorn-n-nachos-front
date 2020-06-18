@@ -41,7 +41,7 @@
 <script>
 import axios from 'axios'
 import StarRating from 'vue-star-rating'
-const SERVER_URL = 'http://127.0.0.1:8000'
+const SERVER_URL = 'http://3.34.200.109'
 
 
 export default {
@@ -109,8 +109,10 @@ export default {
     },
   },
   created() {
+    if (this.$cookies.isKey('auth-token')) {
+      this.getRate()
+    }
     this.getGenres()
-    this.getRate()
   }
 }
 </script>

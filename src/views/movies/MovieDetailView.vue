@@ -48,7 +48,7 @@ import axios from 'axios'
 import ArticleListView from '@/views/articles/ArticleListView.vue'
 import RateView from '@/components/RateView.vue'
 
-const SERVER_URL = 'http://127.0.0.1:8000'
+const SERVER_URL = 'http://3.34.200.109'
 
 export default {
   name: 'MovieDetailView',

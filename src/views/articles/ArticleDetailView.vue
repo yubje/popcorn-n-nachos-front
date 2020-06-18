@@ -55,7 +55,7 @@
 import axios from 'axios'
 import CommentCreateView from '@/components/comments/CommentCreateView.vue'
 import CommentListView from '@/components/comments/CommentListView.vue'
-const SERVER_URL = 'http://127.0.0.1:8000'
+const SERVER_URL = 'http://3.34.200.109'
 
 export default {
   name: 'ArticleDetailView',
@@ -106,7 +106,7 @@ export default {
         }
       }
       axios.delete(`${SERVER_URL}/articles/${this.article_id}/update_delete/`, requestHeader)
-      .then(response => {
+      .then(()=> {
         this.$router.push({ name: 'MovieDetailView', query: {movie_id : this.article.movie }})
       })
       .catch(error => console.log(error.response.data))
