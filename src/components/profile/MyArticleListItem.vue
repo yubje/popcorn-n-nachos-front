@@ -1,6 +1,5 @@
 <template>
   <div id="main" :style="{ 'backgroundImage': `url(${this.backdropUrl})`}" >
-    
     <div id="gradient">
       <div class="mb-5">
         <h2 id="articleTitle" @click="gotoArticleDetail">{{ myArticle.title }}</h2>
@@ -8,7 +7,6 @@
       </div>
       <div>Post Date: {{ myArticle.created_at.substring(0, 10) }}  |   {{ myArticle.updated_at.substring(0, 10) }}</div>
     </div>
-
   </div>
 </template>
 
@@ -31,10 +29,10 @@ export default {
   methods: {
     getMovie() {
       axios.get(`${SERVER_URL}/movies/${this.myArticle.movie}/`)
-        .then(res => {
-          this.mymovie = res.data
+        .then(response => {
+          this.mymovie = response.data
         })
-        .catch(err => console.log(err))
+        .catch(error => console.log(error.response.data))
     },
     gotoArticleDetail() {
       this.$router.push({name: 'ArticleDetailView', query: {article_id: this.myArticle.id}})

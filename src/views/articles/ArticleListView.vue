@@ -60,7 +60,6 @@ export default {
     fetchArticles() {
       axios.get(`${SERVER_URL}/articles/bymovie/${this.movie_id}/`)
         .then(response => {
-          // console.log(response.data)
           this.articles = response.data})
         .catch(error => console.log(error.response.data))
     },

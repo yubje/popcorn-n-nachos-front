@@ -63,13 +63,11 @@ export default {
         }
       }
       axios.get(`${SERVER_URL}/accounts/get_rates/`, requestHeader)
-        .then(res => {
-          // console.log(res.data)
-          this.myRates = res.data
+        .then(response => {
+          this.myRates = response.data
           this.computeGenres()
-          // this.getRatedMovies()
         })
-        .catch(err => console.log(err.data))
+        .catch(error => console.log(error.response.data))
     },
     computeGenres() {
       const requestHeader = {
@@ -78,18 +76,17 @@ export default {
         }
       }
       axios.post(`${SERVER_URL}/accounts/compute_genres/`, this.myRates, requestHeader)
-        .then(res => {
-          this.myGenres = res.data
+        .then(response => {
+          this.myGenres = response.data
         })
-        .catch(err => console.log(err))
+        .catch(error => console.log(error.response.data))
     },
     getArticles() {
       axios.get(`${SERVER_URL}/articles/byuser/${this.personalInfo.id}/`)
-        .then(res => {
-          console.log(this.personalInfo.id)
-          this.myArticles = res.data
+        .then(response => {
+          this.myArticles = response.data
         })
-        .catch(err => console.log(err.data))
+        .catch(error => console.log(error.response.data))
     },
     changeMovieStatus() {
       this.showRatedMovies = true

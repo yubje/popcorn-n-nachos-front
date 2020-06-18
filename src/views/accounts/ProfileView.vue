@@ -3,18 +3,13 @@
     <MyInfoView @gotPersonalInfo="gotPersonalInfo" />
     <gb-divider color="grey"></gb-divider>
     <MyRatedGenresView :personalInfo="personalInfo" />
-    
-    
   </div>
 </template>
 
 <script>
 
 import MyInfoView from '@/components/profile/MyInfoView.vue'
-// import MyRatedMoviesView from '@/components/profile/MyRatedMoviesView.vue'
 import MyRatedGenresView from '@/components/profile/MyRatedGenresView.vue'
-
-
 
 export default {
   name: 'ProfileView',

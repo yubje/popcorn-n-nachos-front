@@ -2,10 +2,7 @@
   <div style="text-align:left;">
     <h2>Personal Info</h2>
     <p>ID: {{ info.id }}</p>
-    
     <p>USERNAME: {{info.username}}</p>
-      
-    
   </div>
 </template>
 
@@ -33,11 +30,11 @@ export default {
         }
       }
       axios.get(`${SERVER_URL}/accounts/myinfo/`, requestHeader)
-        .then(res => {
-          this.info = res.data
+        .then(response => {
+          this.info = response.data
           this.$emit('gotPersonalInfo', this.info)
         })
-        .catch(err => console.log(err))
+        .catch(error => console.log(error.response.data))
     }
   },
 

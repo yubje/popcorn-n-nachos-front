@@ -5,21 +5,23 @@
       <div class="card-body d-flex flex-column justify-content-between">
         <div class="d-flex justify-content-between">
           <h6 class="card-title">{{ movie.title }}</h6>
-          <div style="margin-left: 10px;"><gb-badge color='orange' :filled="true"><b>
-            {{ movie.vote_average }}
-          </b></gb-badge></div>
+          <div style="margin-left: 10px;">
+            <gb-badge color='orange' :filled="true">
+              <b>
+                {{ movie.vote_average }}
+              </b>
+            </gb-badge>
+          </div>
         </div>
         <div class="card-text">
           <span class="text-muted" v-for="genre in genreObjects" :key="genre.id">
             <small>{{ genre.name }} </small>
           </span>
-          
         </div>
       </div>
 
       <!-- overlay Rate -->
       <div class="overlay" style="text-align:center;">
-        
         <div class="stardiv">
         <star-rating 
           border-color="#FFC02A"
@@ -32,7 +34,6 @@
         ></star-rating>
         </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -64,10 +65,10 @@ export default {
   methods: {
     getGenres() {
       axios.get(`${SERVER_URL}/movies/${this.movie.id}/get_genres/`)
-        .then(res => {
-          this.genreObjects = res.data
+        .then(response => {
+          this.genreObjects = response.data
         })
-        .catch(err => console.log(err))
+        .catch(error => console.log(error))
     },
     gotoMovieDetail() {
       this.$router.push({ name: 'MovieDetailView', query: {movie_id : this.movie.id }})
@@ -79,17 +80,16 @@ export default {
         }
       }
       axios.post(`${SERVER_URL}/movies/${this.movie.id}/rate_info/`, null, requestHeader)
-        .then(res => {
-          // console.log(res.data)
-          if (!res.data.rate) {
+        .then(response => {
+          if (!response.data.rate) {
             
             this.myRate = 0
           } else {
-            this.myRate = res.data.rate
-            this.rating = res.data.rate
+            this.myRate = response.data.rate
+            this.rating = response.data.rate
           }
           })
-        .catch(err => console.log(err))
+        .catch(error => console.log(error))
     },
     Rate() {
       const requestHeader = {
@@ -99,9 +99,7 @@ export default {
       }
       this.rateData.rate = this.rating
       axios.post(`${SERVER_URL}/movies/${this.movie_id}/rate/${this.myRate}/`, this.rateData, requestHeader)
-        .then(() => {
-          // console.log(response.data)
-        })
+        .then(() => {})
         .catch(error => console.log(error.response.data))
     }
   },
@@ -130,8 +128,6 @@ export default {
   background: rgba(0, 0, 0, 0.6);
   text-align: center;
   
-  /* -webkit-transition: .6s ease; */
-  /* transition: .6s ease; */
 }
 
 .card:hover .overlay{
@@ -144,9 +140,6 @@ export default {
   background-color: black;
 }
 
-/* .card:hover {
-  filter:brightness(50%);
-} */
 
 .card-title {
   text-align: left;

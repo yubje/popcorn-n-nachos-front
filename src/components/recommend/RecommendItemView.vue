@@ -1,13 +1,11 @@
 <template>
   <div class="card p-0 border-0 m-0">
-    <img :src="backdropUrl" class="card-img-top" :alt="movie.id">
-    
+    <img :src="backdropUrl" class="card-img-top" :alt="movie.id"> 
     <div class="overlay" @click="gotoMovieDetail">
       <div class="description">
         <p class="title"><b>{{ movie.title }}</b></p>
       </div>
     </div>
-
   </div>
 </template>
 

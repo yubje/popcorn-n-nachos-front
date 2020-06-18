@@ -84,7 +84,6 @@ export default {
       }
       axios.post(`${SERVER_URL}/articles/${this.article_id}/`, null, requestHeader)
         .then(response => {
-          // console.log(response.data)
           this.article = response.data
           this.fetchMovie()
           })
@@ -108,7 +107,6 @@ export default {
       }
       axios.delete(`${SERVER_URL}/articles/${this.article_id}/update_delete/`, requestHeader)
       .then(response => {
-        console.log(response)
         this.$router.push({ name: 'MovieDetailView', query: {movie_id : this.article.movie }})
       })
       .catch(error => console.log(error.response.data))

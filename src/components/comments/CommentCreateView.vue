@@ -19,14 +19,11 @@
           >SUBMIT</button>
       </div>
     </div>
-
-
   </div>
 </template>
 
 <script>
 import axios from 'axios'
-
 const SERVER_URL = 'http://127.0.0.1:8000'
 
 export default {
@@ -62,7 +59,6 @@ export default {
   methods: {
     createComment() {
       // 토큰 정보 가져오기(?)
-      // console.log(this.article_id)
       const requestHeader = {
         headers: {
           Authorization: `Token ${this.$cookies.get('auth-token')}`
@@ -76,7 +72,6 @@ export default {
         .catch(error => console.log(error.response.data))
     },
     updateComment() {
-      console.log(this.comment)
       const requestHeader = {
         headers: {
           Authorization: `Token ${this.$cookies.get('auth-token')}`
@@ -97,7 +92,6 @@ export default {
 div {
   vertical-align: center;
 }
-
 
 .inputbox {
   border: 1px solid #8EACC5;

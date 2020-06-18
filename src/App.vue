@@ -68,7 +68,6 @@ export default {
         }
       }
       // url, body, header
-      console.log('logout 실행')
       axios.post(`${SERVER_URL}/rest-auth/logout/`, null, requestHeader)
         .then(() => {
           // 캐시 삭제
@@ -76,7 +75,6 @@ export default {
           // 상태 변경
           this.isLoggedIn = false
           // 목록으로 이동
-          console.log('logout 성공')
           this.$router.push('/movies')
         })
         .catch(error => console.log(error.response.data))

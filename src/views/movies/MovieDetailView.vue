@@ -72,7 +72,7 @@ export default {
     fetchMovie() {
       axios.get(`${SERVER_URL}/movies/${this.movie_id}/`)
       .then(response => {
-        // console.log(response.data)
+
         this.movie = response.data
         this.getbackDropUrl()
         })
@@ -83,7 +83,7 @@ export default {
       .then(response => {
         this.genres = response.data
       })
-      .catch(err=> console.log(err))
+      .catch(error=> console.log(error.response.data))
     },
     getbackDropUrl() {
       this.backdropUrl = `https://image.tmdb.org/t/p/original/${this.movie.backdrop_path}`

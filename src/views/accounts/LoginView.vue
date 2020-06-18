@@ -3,14 +3,13 @@
     <div class="formbox">
       <div class="forms">
         <h1 class="mt-4">Login</h1>
-
         <form class="form" @submit.prevent="login">
           <label for="id">ID: </label>
           <input id="id" type="text" placeholder="ID" v-model="loginData.username"><br>
 
           <label for="pw">Password: </label>
           <input id="pw" type="password" placeholder="Password" v-model="loginData.password"><br>
-
+          
           <gb-button class="button" color="blue" size="small" type="submit">Login</gb-button>
         </form>
       </div>

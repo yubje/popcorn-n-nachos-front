@@ -20,7 +20,6 @@
           :comment="comment"
         />
       </div>
-      
     </div>
   </div>
 </template>
@@ -60,14 +59,11 @@ export default {
       axios.post(`${SERVER_URL}/articles/${this.article_id}/comments_list/`)
       .then(response => {
         this.comments = response.data
-        console.log(this.comments)
         })
       .catch(error => console.log(error.response.data))
     },
     updateRequest(comment) {
-      // console.log(comment)
       this.updateR = comment
-      console.log(this.updateR)
     }
   },
 

@@ -39,7 +39,6 @@ export default {
     fetchMovie() {
       axios.get(`${SERVER_URL}/movies/${this.movie_id}/`)
       .then(response => {
-        // console.log(response.data)
         this.movie = response.data
         })
       .catch(error => console.log(error.response.data))
@@ -73,19 +72,8 @@ td {
 }
 
 .col-title-item {
-  /* width: 100%; */
   word-break: break-all !important;
   text-align: left;
-  /* overflow: hidden;
-  white-space: no-wrap;
-  text-overflow: ellipsis;
-  vertical-align: middle;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; 
-  -webkit-box-orient: vertical;
-  border-style: none; */
-  /* line-height: 1.2em;
-  height: 3.6em;  */
 }
 
 </style>
