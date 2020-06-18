@@ -62,7 +62,5 @@ export default {
 </script>
 
 <style scoped>
-/* li:hover {
-  cursor: !point;
-} */
+
 </style>

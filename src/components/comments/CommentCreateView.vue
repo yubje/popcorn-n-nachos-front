@@ -97,6 +97,8 @@ export default {
 div {
   vertical-align: center;
 }
+
+
 .inputbox {
   border: 1px solid #8EACC5;
   border-radius: 5px;
@@ -106,9 +108,12 @@ div {
   width: 100%;
   padding: 10px;
   border: 0px none;
+  box-shadow: none;
   background-color: transparent;
 }
-/* button {
-  outline: none !important;
-} */
+
+.textbox:focus {
+  outline: none;
+}
+
 </style>
