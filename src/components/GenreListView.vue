@@ -23,7 +23,7 @@
 
 <script>
 import axios from 'axios'
-const SERVER_URL = 'http://3.34.200.109'
+const SERVER_URL = 'http://54.180.146.74'
 
 export default {
   name: 'GenreListView',
@@ -36,6 +36,7 @@ export default {
     getGenres() {
       axios.get(`${SERVER_URL}/movies/genre_list/`)
         .then(response => {
+          console.log(response.data)
           this.genres = response.data
         })
         .catch(error => console.log(error.data))

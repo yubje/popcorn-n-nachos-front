@@ -30,7 +30,7 @@ import axios from 'axios'
 import MyRatedMoviesView from '@/components/profile/MyRatedMoviesView.vue'
 import MyArticleListView from '@/components/profile/MyArticleListView.vue'
 
-const SERVER_URL = 'http://3.34.200.109'
+const SERVER_URL = 'http://54.180.146.74'
 
 export default {
   name: 'MyRatedGenresView',
@@ -62,7 +62,7 @@ export default {
           Authorization: `Token ${this.$cookies.get('auth-token')}`
         }
       }
-      axios.get(`${SERVER_URL}/accounts/get_rates/`, requestHeader)
+      axios.get(`${process.env.SERVER_URL}/accounts/get_rates/`, requestHeader)
         .then(response => {
           this.myRates = response.data
           this.computeGenres()
@@ -75,7 +75,7 @@ export default {
           Authorization: `Token ${this.$cookies.get('auth-token')}`
         }
       }
-      axios.post(`${SERVER_URL}/accounts/compute_genres/`, this.myRates, requestHeader)
+      axios.post(`${process.env.SERVER_URL}/accounts/compute_genres/`, this.myRates, requestHeader)
         .then(response => {
           this.myGenres = response.data
         })

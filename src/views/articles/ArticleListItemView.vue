@@ -21,7 +21,7 @@
 <script>
 import axios from 'axios'
 
-const SERVER_URL = 'http://3.34.200.109'
+const SERVER_URL = 'http://54.180.146.74'
 export default {
   name: 'ArticleListItemView',
   data() {

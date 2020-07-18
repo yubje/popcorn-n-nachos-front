@@ -16,7 +16,7 @@
 <script>
 import axios from 'axios'
 import StarRating from 'vue-star-rating'
-const SERVER_URL = 'http://3.34.200.109'
+const SERVER_URL = 'http://54.180.146.74'
 
 export default {
   name: 'RateView',
@@ -47,7 +47,7 @@ export default {
         }
       }
       this.rateData.rate = this.rating
-      axios.post(`${SERVER_URL}/movies/${this.movie_id}/rate/${this.ori_rate}/`, this.rateData, requestHeader)
+      axios.post(`${process.env.SERVER_URL}/movies/${this.movie_id}/rate/${this.ori_rate}/`, this.rateData, requestHeader)
         .then(response =>
           console.log(response.data)
         )

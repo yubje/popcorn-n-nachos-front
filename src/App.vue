@@ -18,7 +18,7 @@ import axios from 'axios'
 import Navbar from '@/components/Navbar.vue'
 
 
-const SERVER_URL = 'http://3.34.200.109'
+const SERVER_URL = 'http://54.180.146.74'
 
 export default {
   name: "App",
@@ -46,7 +46,7 @@ export default {
           // 1. 키 값 넘겨주기
           this.setCookie(response.data.key)
          // 2. 로그인 끝나면 메인 화면 이동
-          this.$router.push('/movies')
+          this.$router.push('/')
         })
         .catch(error => console.log(error.response.data))
     },
@@ -56,7 +56,7 @@ export default {
       axios.post(`${SERVER_URL}/rest-auth/login/`, loginData)
         .then(response => {
           this.setCookie(response.data.key)
-          this.$router.push('/movies')
+          this.$router.push('/')
         })
         .catch(error => console.log(error.response.data))
     },
@@ -75,7 +75,7 @@ export default {
           // 상태 변경
           this.isLoggedIn = false
           // 목록으로 이동
-          this.$router.push('/movies')
+          this.$router.push('/')
         })
         .catch(error => console.log(error.response.data))
     },
