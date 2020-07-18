@@ -36,7 +36,6 @@ export default {
     getGenres() {
       axios.get(`${SERVER_URL}/movies/genre_list/`)
         .then(response => {
-          console.log(response.data)
           this.genres = response.data
         })
         .catch(error => console.log(error.data))

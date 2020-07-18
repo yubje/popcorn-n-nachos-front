@@ -62,7 +62,7 @@ export default {
           Authorization: `Token ${this.$cookies.get('auth-token')}`
         }
       }
-      axios.get(`${process.env.SERVER_URL}/accounts/get_rates/`, requestHeader)
+      axios.get(`${SERVER_URL}/accounts/get_rates/`, requestHeader)
         .then(response => {
           this.myRates = response.data
           this.computeGenres()
@@ -75,7 +75,7 @@ export default {
           Authorization: `Token ${this.$cookies.get('auth-token')}`
         }
       }
-      axios.post(`${process.env.SERVER_URL}/accounts/compute_genres/`, this.myRates, requestHeader)
+      axios.post(`${SERVER_URL}/accounts/compute_genres/`, this.myRates, requestHeader)
         .then(response => {
           this.myGenres = response.data
         })
